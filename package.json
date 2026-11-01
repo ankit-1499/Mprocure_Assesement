@@ -1,0 +1,31 @@
+{
+  "name": "in-process-rate-limiter",
+  "version": "1.0.0",
+  "description": "High-throughput, strictly contract-adherent in-memory rolling-window rate limiter in TypeScript with zero runtime dependencies.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && node --test dist/test/unit/*.test.js dist/test/property/*.test.js",
+    "test:unit": "tsc && node --test dist/test/unit/*.test.js",
+    "test:property": "tsc && node --test dist/test/property/*.test.js",
+    "bench": "tsc && node dist/bench/benchmark.js",
+    "bench:memory": "tsc && node --expose-gc dist/bench/memory-gc.js",
+    "bench:adversarial": "tsc && node --expose-gc dist/bench/adversarial-memory.js",
+    "bench:eviction": "tsc && node dist/bench/eviction-pause.js"
+  },
+  "keywords": [
+    "rate-limiter",
+    "sliding-window",
+    "in-memory",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "fast-check": "^3.15.0",
+    "typescript": "^5.3.3"
+  }
+}
+
